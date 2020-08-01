@@ -1,17 +1,21 @@
-/*
- * Sample usage:
- * 
- * $ node render.js ./form-field/field.njk ./sample-input/form-field/without-hint.json
- *
- */
+#!/usr/bin/env node
 
 var nunj = require('nunjucks');
 var fs = require('fs');
 var prettify = require('pretty');
 
-var templateFile = process.argv[2]
+var argv = require('yargs')
+	.usage('Usage: $0 [options]')
+	.demandOption(['t'])
+	.describe('t', 'Template file')
+	.alias('t', 'template')
+	.describe('d', 'Json data file')
+	.alias('d', 'data')
+	.argv
 
-var data = fs.readFileSync(process.argv[3], 'utf-8');
+var templateFile = argv.template
+
+var data = fs.readFileSync(argv.data, 'utf-8');
 
 var res = nunj.render(templateFile, JSON.parse(data));
 
