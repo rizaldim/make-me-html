@@ -1,0 +1,5 @@
+exports.data = {
+	name: 'first-name',
+	label: 'First name',
+	type: 'text'
+}

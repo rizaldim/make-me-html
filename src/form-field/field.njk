@@ -1,0 +1,9 @@
+<div class="field">
+	<label for="{{ name }}">
+		<span class="field-label">{{ label }}</span>
+		{% if hint %}
+			<span class="field-hint">{{ hint }}</span>
+		{% endif %}
+	</label>
+	<input type="{{ type }}" id="{{ name }}" name="{{ name }}">
+</div>

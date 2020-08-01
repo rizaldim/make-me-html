@@ -1,0 +1,6 @@
+{
+	"name": "password",
+	"label": "Password",
+	"type": "password",
+	"hint": "Must more than 8 characters"
+}
